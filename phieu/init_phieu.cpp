@@ -48,7 +48,7 @@ class Gai_ngoan : public Phu_nu // Tinh ke thua
     {
         std::cout << ho_ten << " " << std::endl; 
     }
-    std::string choi_nhac_cu(std::string nhac_cu)
+    std::string choi_nhac_cu(std::string nhac_cu) // Tinh da hinh
     {
         return "ooooooooooooo";
     }
@@ -62,15 +62,17 @@ class Gai_hu : Phu_nu // tinh ke thua
         {}
     void di_bar()
     {}
+    std::string choi_nhac_cu(std::string nhac_cu)
+    {
+        return "uuuuuuuuuuu";
+    }
     
 };
 int main()
 {
-    Gai_ngoan *thao = new Gai_ngoan("mazia ozawa",20, false); // Cap phat dong
-    thao->choi_nhac_cu("ken");
-    thao->va_zin();
-    thao->show_hang();
-    thao->noi_tro();
+    Gai_hu *thao = new Gai_hu("mazia ozawa",20, false); // Cap phat dong
+    std::cout << thao->choi_nhac_cu("Ken") << std::endl;
+
 
 
     return 0;
