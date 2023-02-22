@@ -6,6 +6,7 @@
 using namespace std;
 
 //// Init class Khoa
+class truong;
 class khoa
 {
     private:
@@ -111,8 +112,6 @@ int main()
     for(int i=0; i<n;   i++)
     {
         a[i].input();
-
-        
     }
     PRINTF_answer(a,n);
     
