@@ -27,7 +27,7 @@ class ban
         void input();
         void output();
         // Khai bao lop ban de truong duoc su dung thuoc tinh cua ban
-        friend class truong; 
+        
 };
 
 // Nhap xuat cho class Ban
@@ -96,11 +96,13 @@ void PRINTF_answer(truong a[50], int n)
     {
         int check=0;
         for(int j=0; j<a[i].so_khoa; j++ )
-        {
             if(strcmp(a[i].x[j].ten_khoa, "CNTT")==0)
             {
                 check=1;
             }
+        if(a[i].so_ban > 3 || check ==1)
+        {
+            a[i].output();
         }
     }
 }
