@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <string>
 #include <math.h>
+#include <cstring>
 
 class Nha_cung_cap
 {
@@ -36,17 +37,14 @@ class Hang
     public:
         void input()
         {
-            // std::cout << std::endl;
-            // std::cout << "Nhap ten hang: "; fgets(ten_hang, 30, stdin);
-            // std::cout << "Nhap don gia cua: " << ten_hang; std::cin >> don_gia;
-            // std::cout << "Nhap so luong cua: " << ten_hang; std::cin >> so_luong;
 
-            std::cout << "Nhap ten hang: ";
-            fgets(ten_hang, 30, stdin);
-            std::cout << "Nhap don gia cua: " << ten_hang;
-            fgets((char*)&don_gia, sizeof(don_gia), stdin);
-            std::cout << "Nhap so luong cua: " << ten_hang;
-            fgets((char*)&so_luong, sizeof(so_luong), stdin);
+            std::cout << std::endl;
+            std::cout << "Nhap ten hang: "; fflush(stdin);   gets(ten_hang);
+            std::cout << "Nhap don gia cua: " << ten_hang; std::cin >> don_gia;
+            std::cout << "Nhap so luong cua: " << ten_hang; std::cin >> so_luong;
+
+
+            
         }
         void output()
         {
@@ -88,6 +86,8 @@ class Phieu
             std::cout << std::setw(10) << "Ma phieu: " << std::setw(20) << ma_phieu \
             << std::setw(20) << "Ngay lap:" << ngay_lap << std::endl;
 
+            ncc.output();
+
             std::cout << std::setw(15) << "Tenhang" << std::setw(15) << "Don gia" \
             << std::setw(15) << "So luong" << std::setw(15) << "Thanh tien" << std::endl;
 
@@ -107,6 +107,7 @@ int main()
     Phieu a;
     a.input();
     std::cout << "==================== PHIEU NHAP HANG ====================" << std::endl;
-
+    a.output();
+    
     return 0;
 }

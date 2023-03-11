@@ -159,6 +159,7 @@ class Phieu
         char ma_phieu[20];
         char ngay_lap[20];
         Hang *hang;
+        Nha_cung_cap ncc;
         int n;
  // 1 phieu co nhieu object hang hoa
     public:
@@ -206,6 +207,8 @@ void Phieu::input()
 {
     cout<<"\nNhap ma phieu: ";      fflush(stdin);      gets(ma_phieu);
     cout<<"\nNhap ngay lap: ";      fflush(stdin);      gets(ngay_lap);
+
+    ncc.input();
     cout<<"\nNhap so luong hang: "; cin>>n;
     hang = new Hang[n];
     FOR(i,n)
@@ -218,8 +221,11 @@ void Phieu::input()
 }
 void Phieu::output()
 {
+    cout<<"\t PHIEU NHAP HANG"<<endl;
     cout<<"\nMa phieu: "<<ma_phieu<<"\t";
     cout<<"Ngay lap: "<<ngay_lap;
+    ncc.output();
+    cout<<"STT"<<setw(10)<<"Ten Hang"<<setw(15)<<"Don gia"<<setw(15)<<"So luong"<<setw(15)<<"Thanh tien"<<endl;
     FOR(i,n)
     {
         cout<<(i+1)<<setw(10);
@@ -230,28 +236,14 @@ void Phieu::output()
     {
         tong_tien += hang[i].don_gia*hang[i].so_luong;
     }
-    cout<<"\n\t"<<"Cong thanh tien: "<<tong_tien;
+    cout<<"\t"<<"Cong thanh tien: "<<(int)tong_tien;
 }
-float sum_money()
-{
 
-}
 
 main()
 {
-    int n;
-
-
     Phieu a;
-    Nha_cung_cap b;
-
     a.input();
-    b.input();
-    
-    cout<<setw(30)<<"PHIEU NHAP HANG";
     a.output();
-    b.output();
-    cout<<"STT"<<setw(10)<<"Ten Hang"<<setw(15)<<"Don gia"<<setw(15)<<"So luong"<<setw(15)<<"Thanh tien"<<endl;
-    
     
 }
